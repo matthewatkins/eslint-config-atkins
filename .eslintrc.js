@@ -95,7 +95,8 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        trailingComma: 'es5',
+        trailingComma: 'none',
+        semi: false,
         singleQuote: true,
         printWidth: 80,
         //below line only for window users facing CLRF and eslint/prettier error
