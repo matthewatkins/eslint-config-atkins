@@ -1,10 +1,10 @@
 {
-  "name": "eslint-config-atkins",
+  "name": "@matthewatkins/eslint-config-atkins",
   "version": "1.0.1",
   "description": "ESLint and Prettier Config",
   "main": "index.js",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry":"https://npm.pkg.github.com/matthewatkins"
   },
   "scripts": {
     "lint": "eslint .",
@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/matthewatkins/eslint-config-atkins.git"
+    "url": "https://github.com/matthewatkins/eslint-config-atkins.git"
   },
   "keywords": [
     "javascript",
