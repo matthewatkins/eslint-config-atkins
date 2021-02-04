@@ -4,7 +4,7 @@
   "description": "ESLint and Prettier Config",
   "main": "index.js",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/matthewatkins"
+    "registry":"https://npm.pkg.github.com"
   },
   "scripts": {
     "lint": "eslint .",
