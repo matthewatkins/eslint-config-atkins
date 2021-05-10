@@ -1,6 +1,6 @@
 {
   "name": "@matthewatkins/eslint-config-atkins",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ESLint and Prettier Config",
   "main": "index.js",
   "publishConfig": {

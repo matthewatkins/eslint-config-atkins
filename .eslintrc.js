@@ -76,6 +76,13 @@ module.exports = {
         extensions: ['.js', '.jsx'],
       },
     ],
+    'react/self-closing-comp': [
+      'error',
+      {
+        'component': true,
+        'html': false
+      }
+    ],
     radix: 0,
     'no-shadow': [
       2,
