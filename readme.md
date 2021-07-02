@@ -1,7 +1,7 @@
 # Eslint and Prettier Config
 * My personal settings for ESLint and Prettier.
 * Largely ~~based on~~ lifted from [eslint-config-wesbos](https://github.com/wesbos/eslint-config-wesbos) 😉
-
+  - But with added adjustments for how ESLint and Prettier play together.
 ## What it does
 * Lints JavaScript based on the latest standards
 * Fixes issues and formatting errors with Prettier
@@ -62,18 +62,11 @@ If you'd like to overwrite eslint or prettier settings, you can add the rules in
   ],
   "rules": {
     "no-console": 2,
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "printWidth": 120,
-        "tabWidth": 8,
-      }
-    ]
   }
 }
 ```
+
+Further ESLint / Prettier configuration help can be found by reading [this article and following step 1. "Remove conflicting rules and run serially"](https://blog.logrocket.com/automate-formatting-and-fixing-javascript-code-with-prettier-and-eslint/)
 
 ## With VS Code
 
@@ -81,12 +74,15 @@ You should read this entire thing. Serious!
 
 Once you have done one, or both, of the above installs. You probably want your editor to lint and fix for you. Here are the instructions for VS Code:
 
-1. Install the [ESLint package](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+1. Install these VS Code extensions [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode), and [Format Code Action](https://marketplace.visualstudio.com/items?itemName=rohit-gohri.format-code-action).
 2. Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. It's easier to enter these settings while editing the `settings.json` file, so click the `{}` icon in the top right corner:
+  - NOTE: You can also add these per project by putting them in a `settings.json` file inside of a `.vscode` directory in the root of your project.
+
   ```js
-  // These are all my auto-save configs
+  // ...
+  // first enable formatOnSave
   "editor.formatOnSave": true,
-  // turn it off for JS and JSX, we will do this via eslint
+  // then, turn it off for JS and JSX, we will do this via eslint
   "[javascript]": {
     "editor.formatOnSave": false
   },
@@ -95,12 +91,9 @@ Once you have done one, or both, of the above installs. You probably want your e
   },
   // show eslint icon at bottom toolbar
   "eslint.alwaysShowStatus": true,
-  // tell the ESLint plugin to run on save
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  // Optional BUT IMPORTANT: If you have the prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already
-  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  // run Prettier then ESLint plugin to run on save
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  // ...
   ```
 
 Finally you'll usually need to restart VS code. They say you don't need to, but it's never worked for me until I restart.

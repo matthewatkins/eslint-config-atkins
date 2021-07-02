@@ -57,7 +57,9 @@ module.exports = {
     import: 0,
     'func-names': 0,
     'space-before-function-paren': 0,
-    'comma-dangle': 0,
+    'semi': [2, "always"],
+    'comma-style': [2, 'last'],
+    'comma-dangle': [2, 'never'],
     'max-len': 0,
     'import/extensions': 0,
     'no-underscore-dangle': 0,
@@ -97,18 +99,6 @@ module.exports = {
       {
         avoidEscape: true,
         allowTemplateLiterals: true,
-      },
-    ],
-    'prettier/prettier': [
-      'error',
-      {
-        trailingComma: 'none',
-        semi: false,
-        singleQuote: true,
-        printWidth: 80,
-        //below line only for window users facing CLRF and eslint/prettier error
-        // non window users feel free to delete it
-        endOfLine: 'auto'
       },
     ],
     'jsx-a11y/href-no-hash': 'off',
