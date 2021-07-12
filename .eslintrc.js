@@ -20,6 +20,7 @@ module.exports = {
     'no-alert': 0,
     'no-await-in-loop': 0,
     'no-return-assign': ['error', 'except-parens'],
+    'no-use-before-define': 0,
     'no-restricted-syntax': [
       2,
       'ForInStatement',
@@ -33,6 +34,7 @@ module.exports = {
         argsIgnorePattern: 'res|next|^err',
       },
     ],
+    "no-use-before-define": 0,
     'prefer-const': [
       'error',
       {
@@ -72,6 +74,7 @@ module.exports = {
     'react/no-unescaped-entities': 0,
     'jsx-a11y/accessible-emoji': 0,
     'react/require-default-props': 0,
+    'react/jsx-props-no-spreading': 0,
     'react/jsx-filename-extension': [
       1,
       {
