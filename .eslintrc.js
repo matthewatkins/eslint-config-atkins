@@ -66,6 +66,12 @@ module.exports = {
     'import/extensions': 0,
     'no-underscore-dangle': 0,
     'object-curly-spacing': [2, 'always'],
+    'object-curly-newline': [
+      2,
+      {
+        'ObjectPattern': {'multiline': true}
+      }
+    ],
     'array-bracket-spacing': [2, 'always'],
     'consistent-return': 0,
     'react/display-name': 1,
