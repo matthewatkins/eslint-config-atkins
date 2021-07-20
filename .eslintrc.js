@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2021,
@@ -58,13 +58,15 @@ module.exports = {
     'import/prefer-default-export': 0,
     import: 0,
     'func-names': 0,
-    'space-before-function-paren': 0,
+    'space-before-function-paren': [2, 'always'],
     'semi': [2, "always"],
     'comma-style': [2, 'last'],
     'comma-dangle': [2, 'never'],
     'max-len': 0,
     'import/extensions': 0,
     'no-underscore-dangle': 0,
+    'object-curly-spacing': [2, 'always'],
+    'array-bracket-spacing': [2, 'always'],
     'consistent-return': 0,
     'react/display-name': 1,
     'react/no-array-index-key': 0,
@@ -114,5 +116,5 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
   },
-  plugins: ['html', 'prettier', 'react-hooks'],
+  plugins: ['html', 'react-hooks'],
 };

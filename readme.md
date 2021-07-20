@@ -1,10 +1,11 @@
-# Eslint and Prettier Config
-* My personal settings for ESLint and Prettier.
+# Eslint Config V2.1.0
+* My personal settings for ESLint ~~and Prettier~~.
 * Largely ~~based on~~ lifted from [eslint-config-wesbos](https://github.com/wesbos/eslint-config-wesbos) 😉
-  - But with added adjustments for how ESLint and Prettier play together.
+  - ~~But with added adjustments for how ESLint and Prettier play together.~~
+  - V2.1.0 removes Prettier
 ## What it does
 * Lints JavaScript based on the latest standards
-* Fixes issues and formatting errors with Prettier
+* ~~Fixes issues and formatting errors with Prettier~~
 * Lints + Fixes inside of html script tags
 * Lints + Fixes React via eslint-config-airbnb
 * You can see all the [rules here](https://github.com/matthewatkins/eslint-config-atkins/blob/master/.eslintrc.js)
@@ -31,15 +32,8 @@ npx install-peerdeps --dev eslint-config-atkins
 4. Create a `.eslintrc` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc` file should look like this:
 ```json
 {
-  "extends": [
-    "@matthewatkins/atkins"
-  ]
+  "extends": ["atkins"]
 }
-```
-
-5. In this case, you will also need an `.npmrc` file containing the following:
-```text
-registry=https://npm.pkg.github.com/matthewatkins
 ```
 
 Tip: You can alternatively put this object in your `package.json` under the property `"eslintConfig":`. This makes one less file in your project.
@@ -57,7 +51,7 @@ Tip: You can alternatively put this object in your `package.json` under the prop
 
 ## Settings
 
-If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"` while [prettier options](https://prettier.io/docs/en/options.html) go under `"prettier/prettier"`. Note that prettier rules overwrite anything in my config (trailing comma, and single quote), so you'll need to include those as well.
+If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"`.
 
 ```js
 {
@@ -70,7 +64,9 @@ If you'd like to overwrite eslint or prettier settings, you can add the rules in
 }
 ```
 
-Further ESLint / Prettier configuration help can be found by reading [this article and following step 1. "Remove conflicting rules and run serially"](https://blog.logrocket.com/automate-formatting-and-fixing-javascript-code-with-prettier-and-eslint/)
+**NOTE** The following reading is mostly inaccurate now since removing Prettier.
+
+Further ESLint ~~/ Prettier~~ configuration help can be found by reading [this article and following step 1. "Remove conflicting rules and run serially"](https://blog.logrocket.com/automate-formatting-and-fixing-javascript-code-with-prettier-and-eslint/)
 
 ## With VS Code
 
@@ -96,7 +92,7 @@ Once you have done one, or both, of the above installs. You probably want your e
   // show eslint icon at bottom toolbar
   "eslint.alwaysShowStatus": true,
   // run Prettier then ESLint plugin to run on save
-  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
   // ...
   ```
 
@@ -105,13 +101,13 @@ Finally you'll usually need to restart VS code. They say you don't need to, but 
 ## With Create React App
 
 1. Run `npx install-peerdeps --dev eslint-config-atkins`
-1. Open your `package.json` and replace `"extends": "react-app"` with `"extends": "atkins"`
+2. Open your `package.json` and replace `"extends": "react-app"` with `"extends": "atkins"`
 
 ## With Gatsby
 
 1. Run `npx install-peerdeps --dev eslint-config-atkins`
-1. If you have an existing `.prettierrc` file, delete it.
-1. follow the `Local / Per Project Install` steps above
+2. If you have an existing `.prettierrc` file, delete it.
+3. follow the `Local / Per Project Install` steps above
 
 ## With Yarn
 
