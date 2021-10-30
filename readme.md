@@ -1,4 +1,4 @@
-# Eslint Config V2.2.1
+# Eslint Config V2.2.2
 * My personal settings for ESLint ~~and Prettier~~.
 * Largely ~~based on~~ lifted from [eslint-config-wesbos](https://github.com/wesbos/eslint-config-wesbos) 😉
   - ~~But with added adjustments for how ESLint and Prettier play together.~~
